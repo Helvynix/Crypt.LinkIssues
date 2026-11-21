@@ -1,0 +1,74 @@
+name: Bug report
+description: Create a report to help us improve. Thanks for taking the time to fill out this bug report!
+title: "Bug: "
+labels: ["bug"]
+type: "Bug"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: dropdown
+    id: urgent
+    attributes:
+      label: Is this urgent?
+      description: |
+        Is this a critical bug, or do you need this fixed urgently?
+      options:
+        - "No"
+        - "Yes"
+  - type: input
+    id: host-os
+    attributes:
+      label: Host OS
+      description: What is your host OS?
+      placeholder: "iOS, Android"
+  - type: input
+    id: version
+    attributes:
+      label: What is the version of the software are you using?
+      description: |
+        Copy paste the version line at the top of your logs.
+        It should be in the form `Running version latest built on branch main, 2023-03-27T01:30:06Z (commit d0f678c)`; or `1.2.0.1-beta`; or `Branch main commit d0f678c`.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: "What's the problem 🤔"
+      placeholder: "This feature does not work..."
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: To Reproduce
+      description: Provide Steps to reproduce the behavior. If applicable, add screenshots to help explain your problem.
+      placeholder: |
+        Steps to reproduce the behavior:
+        1. Go to '...'
+        2. Click on '....'
+        3. Scroll down to '....'
+        4. See error
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Share your logs
+      description: No sensitive information is logged out except when running with `LOG_LEVEL=debug`.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: A clear and concise description of what you expected to happen.
+      render: plain text
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Share your configuration
+      description: Share your configuration such as config files, screen shots of UI settings, etc.
